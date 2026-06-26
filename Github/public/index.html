@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Hub - Plataforma de Jogos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🎮 Game Hub</h1>
+        <div id="user-area">
+            <span id="welcome-msg">Faça login para jogar</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- TELA DE LOGIN -->
+        <section id="login-screen" class="box">
+            <h2>Entrar na Plataforma</h2>
+            <input type="text" id="username-input" placeholder="Digite seu apelido...">
+            <button onclick="fazerLogin()">Entrar / Registrar</button>
+        </section>
+
+        <!-- DASHBOARD PRINCIPAL (OCULTO ANTES DO LOGIN) -->
+        <section id="dashboard" class="box hidden">
+            <div class="layout">
+                <!-- Catálogo de Jogos -->
+                <div class="games-list">
+                    <h3>🕹️ Escolha seu Jogo</h3>
+                    <div class="game-card" onclick="carregarJogo('clicker')">
+                        <h4>Clicker Infinito</h4>
+                        <p>Clique o mais rápido que puder antes do tempo acabar!</p>
+                    </div>
+                </div>
+
+                <!-- Área do Jogo Ativo -->
+                <div class="game-area">
+                    <h3>🎯 Partida</h3>
+                    <div id="iframe-container">
+                        <p class="placeholder-text">Selecione um jogo ao lado para começar.</p>
+                    </div>
+                </div>
+
+                <!-- Leaderboard / Ranking -->
+                <div class="ranking-area">
+                    <h3>🏆 Top 10 Ranking</h3>
+                    <ol id="ranking-list">
+                        <li>Faça login para ver</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
